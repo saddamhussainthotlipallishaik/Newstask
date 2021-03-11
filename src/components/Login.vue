@@ -8,8 +8,8 @@
                     <label for="email">Email :</label>
                     <input type="text" class="form-control" placeholder="Email" v-model="email">
                     <label for="email">Password :</label>
-                    <input type="text" class="form-control" placeholder="Password" v-model="password">
-                    <b-button variant="success" class="mt-5" @click="submit">Submit</b-button>
+                    <input type="password" class="form-control" placeholder="Password" v-model="password">
+                    <b-button variant="success" class="mt-5 mx-2" @click="submit">Submit</b-button>
                     <b-button variant="primary" @click="$router.push('/register')" class="mt-5">Register</b-button>
                 </b-form>
             </b-col>
@@ -31,7 +31,11 @@
         },
         methods :{
             submit(){
-                this.$router.push('/dashboard')
+                if(localStorage.getItem('email') === this.email && localStorage.getItem('password') === this.password) {
+                    this.$router.push('/dashboard')
+                } else {
+                    this.$router.replace('/')
+                }
             }
         }
     }
@@ -42,5 +46,7 @@
     width: 10vw;
     height: 20vh;
 }
-
+.form-control {
+    display: inline !important;
+}
 </style>

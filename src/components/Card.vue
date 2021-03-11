@@ -8,7 +8,7 @@
                 <p>Channel:- {{Info.source.name}}</p>
                 <h2>Headline:- {{Info.title}}</h2>
                 <p>{{Info.description}}</p>
-                <!-- <a href="Info.url"></a>    -->
+                <a :href="Info.url" target="_blank">Visit Page</a>   
                 <img :src="Info.urlToImage" alt="" class="article-img w-100">
                 <p>Published:- {{new Date(`${Info.publishedAt}`).toLocaleString()}}</p> 
                 <p>{{Info.content}}</p> 

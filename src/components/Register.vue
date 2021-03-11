@@ -10,9 +10,9 @@
                     <label for="mobile">Mobile :</label>
                     <input type="text" class="form-control" placeholder="Mobile" v-model="mobile">
                     <label for="password">Password :</label>
-                    <input type="text" class="form-control" placeholder="Password" v-model="password">
+                    <input type="password" class="form-control" placeholder="Password" v-model="password">
                     <label for="cpassword">Confirm Password :</label>
-                    <input type="text" class="form-control" placeholder="Confirm Password" v-model="cpassword">
+                    <input type="password" class="form-control" placeholder="Confirm Password" v-model="cpassword">
                     <b-button variant="success" class="mt-5" @click="signup">Sign Up</b-button>
                 </b-form>
             </b-col>
@@ -37,6 +37,7 @@
                 localStorage.setItem('mobile',this.mobile)
                 localStorage.setItem('password',this.password)
                 localStorage.setItem('cpassword',this.cpassword)
+                this.$router.push('/dashboard')
             }
         }
     }

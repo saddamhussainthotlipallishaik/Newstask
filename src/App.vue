@@ -8,11 +8,13 @@
    <!-- <Canvas /> -->
    <!-- <About /> -->
    <!-- <NewsDashboard /> -->
+   <!-- <Profile /> -->
    <router-view></router-view>
   </div>
 </template>
 
 <script>
+// import Profile from '@/components/Profile'
 // import NewsDashboard from '@/components/NewsDashboard'
 // import Register from '@/components/Register'
 // import Login from '@/components/Login'
@@ -31,7 +33,8 @@ export default {
     // Login,
     // Register
     // PreviewImg,
-    // NewsDashboard
+    // NewsDashboard,
+    // Profile
   }
 }
 </script>
