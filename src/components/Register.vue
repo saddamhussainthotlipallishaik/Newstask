@@ -38,6 +38,7 @@
                 localStorage.setItem('password',this.password)
                 localStorage.setItem('cpassword',this.cpassword)
                 this.$router.push('/dashboard')
+                this.axios.post('')
             }
         }
     }

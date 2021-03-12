@@ -1,8 +1,8 @@
 <template>
   <div class="header-section">
-    <b-col class="p-0">
+    <b-col class="p-0" v-if="showNav">
       <div>
-        <b-navbar toggleable="lg" type="dark" variant="dark">
+        <b-navbar toggleable="lg" type="dark" variant="warning">
           <b-icon icon="justify" font-scale="2" variant="light" @click="sidebar = !sidebar"></b-icon>
           <img src="@/assets/new.jpg" class="img-logo"/>
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -27,7 +27,7 @@
                   <span><b-icon icon="person-fill" variant="light"></b-icon>Account</span>
                 </template>
                 <b-dropdown-item href="#" @click="$router.push('/profile')">Profile</b-dropdown-item>
-                <b-dropdown-item href="#">Favourites</b-dropdown-item>
+                <b-dropdown-item href="#" @click="$router.push('/favourites')">Favourites</b-dropdown-item>
                 <b-dropdown-item href="#" @click="signout">Sign Out</b-dropdown-item>
               </b-nav-item-dropdown>
             </b-navbar-nav>
@@ -52,6 +52,11 @@ export default {
       sidebar:false
     }
   },
+  computed: {
+    showNav() {
+      return !this.$route.meta.showNav
+    }
+  },
   methods :{
     signout(){
       this.$router.replace('/')
@@ -62,6 +67,11 @@ export default {
 </script>
 
 <style scoped>
+.header-section {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
 .img-logo {
   height: 8vh;
   width: 4vw;

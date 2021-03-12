@@ -6,12 +6,12 @@ const routes = [
     {
         path:'/',
         component: () => import('@/components/Login'),
-        meta: {isAuthenticated: false}
+        meta: {isAuthenticated: false, showNav: true}
     },
     {
         path:'/register',
         component: () => import('@/components/Register'),
-        meta: {isAuthenticated: false}
+        meta: {isAuthenticated: false, showNav: true}
     },
     {
         path: "/dashboard",
@@ -21,6 +21,11 @@ const routes = [
     {
         path:'/profile',
         component:()=> import ('@/components/Profile'),
+        meta: {isAuthenticated:true}
+    },
+    {
+        path:'/favourites',
+        component:()=> import ('@/components/Favourites'),
         meta: {isAuthenticated:true}
     },
     

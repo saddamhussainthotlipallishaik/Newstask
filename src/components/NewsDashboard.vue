@@ -1,27 +1,31 @@
 <template>
-    <div class="bg-secondary">
+    <div class="bg-light">
         <div>
-            <Header/>
-            <Card />
-           
+            <!-- <Header/> -->
+            <Card @addfav="arrow"/>
         </div>
     </div>
 </template>
 
 <script>
 
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 import Card from '@/components/Card'
     export default {
         name:"NewsDashboard",
         components :{
-            Header,
+            // Header,
             Card,
             
         },
         data(){
             return {
               
+            }
+        },
+        methods: {
+            arrow(e) {
+                this.$emit('fav', e)
             }
         }
     }

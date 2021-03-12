@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-   <!-- <Header /> -->
+   <Header />
+   <!-- <Sidebar /> -->
    <!-- <Card /> -->
    <!-- <Login />
    <Register class="mt-5" /> -->
@@ -9,7 +10,7 @@
    <!-- <About /> -->
    <!-- <NewsDashboard /> -->
    <!-- <Profile /> -->
-   <router-view></router-view>
+   <router-view :fav="favourite" @fav="addFav"></router-view>
   </div>
 </template>
 
@@ -20,7 +21,8 @@
 // import Login from '@/components/Login'
 // import About from '@/components/About'
 // import Canvas from '@/components/Canvas'
-// import Header from '@/components/Header'
+import Header from '@/components/Header'
+
 // import Card from '@/components/Card'
 // import PreviewImg from '@/components/PreviewImg'
 export default {
@@ -28,14 +30,26 @@ export default {
   components: {
     // About,
     // Canvas,
-    // Header,
+    Header,
     // Card,
     // Login,
     // Register
     // PreviewImg,
     // NewsDashboard,
     // Profile
-  }
+  },
+  data(){
+    return {
+      favourite:[],
+
+    }
+  },
+  methods:{
+    addFav(e){
+      this.favourite.push(e)
+      console.log(e)
+    }
+  },
 }
 </script>
 

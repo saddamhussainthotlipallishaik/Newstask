@@ -14,7 +14,7 @@
                        <div class="d-flex justify-content-center">
                            <div class="profile-img" @click="uploadfun">
                                 <!-- <img src="@/assets/u.png" alt="" class="dimg mt-4" v-if="dprofile"> -->
-                                <b-icon icon="upload" font-scale="1.5" class="mt-5" v-if="dprofile"></b-icon>
+                                <b-icon icon="camera" font-scale="2" class="mt-5" v-if="dprofile"></b-icon>
                                 <img :src="previewprofile" v-if="preimg" alt="" class="img">
                                 <input type="file" ref="fileupload" @change="uploadinput" class="d-none">
                             </div>
@@ -82,7 +82,7 @@
     border: 1px solid #D3D3D3;
     border-radius: 100%;
     width: 10vw;
-    height: 20vh;
+    height: 21vh;
     overflow: hidden;
 }
 .img {
