@@ -2,7 +2,7 @@
   <div>
     <b-row align-h="center" no-gutters>
       <b-col lg="6" md="6" sm="11">
-        <b-card v-for="(Info, index) in news"
+        <b-card v-for="(Info, index) in allNews"
           :key="index" class="card-section">
           <template #header>
             <h2 class="mb-0 head-lines">{{ Info.title }}</h2>
@@ -32,9 +32,11 @@
 </template>
 
 <script>
-import axios from "axios";
+import {mapGetters,mapActions} from 'vuex'
+// import axios from "axios";
 export default {
   name: "Card",
+  props:['fav'],
   data() {
     return {
       news: [],
@@ -42,22 +44,13 @@ export default {
 
     };
   },
-  created() {
-    axios.get(" https://newsapi.org/v2/top-headlines?country=us&apiKey=1d13311f35404387b2fa0daf701678ad")
-      .then(res => {
-        this.news = res.data.articles;
-      })
-      .catch(err => console.log(err));
-  },
+  computed:mapGetters(['allNews']),
+ 
   methods: {
-  //   favorite(i) {
-  //     if(this.favorites.includes(i)) {
-  //      let index =  this.favorites.indexOf(i);
-  //      index>-1?this.favorites.splice(index, 1):this.favorites
-  //     } else {
-  //       this.favorites.unshift(i);
-  //     }
-  //   }
+    ...mapActions(['NewsData'])
+  },
+  async created(){
+    await this.NewsData()
   }
 };
 </script>

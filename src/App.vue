@@ -10,7 +10,7 @@
    <!-- <About /> -->
    <!-- <NewsDashboard /> -->
    <!-- <Profile /> -->
-   <router-view :fav="favourite" @fav="addFav"></router-view>
+   <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view>
   </div>
 </template>
 
@@ -47,7 +47,11 @@ export default {
   methods:{
     addFav(e){
       this.favourite.push(e)
-      console.log(e)
+      console.log(e,"App")
+    },
+    unlike(i){
+      this.favourite.splice(i,1)
+      console.log("remove")
     }
   },
 }

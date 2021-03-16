@@ -2,7 +2,7 @@
     <div class="bg-light">
         <div>
             <!-- <Header/> -->
-            <Card @addfav="arrow"/>
+            <Card @addfav="arrow" />
         </div>
     </div>
 </template>
@@ -26,7 +26,7 @@ import Card from '@/components/Card'
         methods: {
             arrow(e) {
                 this.$emit('fav', e)
-            }
+            },
         }
     }
 </script>

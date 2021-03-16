@@ -20,9 +20,9 @@
           <b-card-body>
             <a :href="info.url" target="_blank" class="card-link">Visit Page</a>
             <b-icon
-              :icon="favorites.includes(Info) ? 'heart-fill' : 'heart'"
+              icon="heart"
               class="px-3"
-              @click="favorite(Info)"
+              @click="$emit('remfav',info)"
             ></b-icon>
           </b-card-body>
 

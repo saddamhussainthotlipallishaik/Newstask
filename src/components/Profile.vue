@@ -1,9 +1,9 @@
 <template>
-    <div class="mt-5">
+    <div>
         <div>
             <b-row>
                 <b-col cols="4" offset="4" class="text-center">
-                    <b-card>
+                    <b-card  class="card-section">
                         <b-row>
                             <b-col></b-col>
                             <b-col></b-col>
@@ -78,8 +78,11 @@
 </script>
 
 <style scoped>
+.card-section {
+    margin-top: 70px;
+}
 .profile-img {
-    border: 1px solid #D3D3D3;
+    border: 1px solid #000;
     border-radius: 100%;
     width: 10vw;
     height: 21vh;

@@ -15,6 +15,7 @@ const routes = [
     },
     {
         path: "/dashboard",
+        name:'dashboard',
         component: () => import('@/components/NewsDashboard'),
         meta: {isAuthenticated: true}
     },
@@ -28,23 +29,29 @@ const routes = [
         component:()=> import ('@/components/Favourites'),
         meta: {isAuthenticated:true}
     },
-    
+    {
+        path:'*',
+        redirect:'/'
+    }
 ]
 
 const router = new VueRouter({
-    routes
+    routes,
+    mode: "history"
 });
 
-// let a = 'saddam';
-// router.beforeEach((to, from, next) => {
-//     if(to.meta.isAuthenticated) {
-//         if(a === 'saddam') {
-//             next()
-//         } else {
-//             next('/')
-//         }
-//     } else {
-//         next()
-//     }
-// })
+let users = localStorage.getItem('user');
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.isAuthenticated)) {
+        if(users) {
+            next({
+                name:'dashboard'
+            })
+        } else {
+            next('/')
+        }
+    } else {
+        next()
+    }
+})
 export default router;
