@@ -1,10 +1,5 @@
 <template>
     <div class="mt-5">
-        <!-- <b-row v-if="errMsg">
-            <b-col>
-                <h6>{{errMsg}}</h6>
-            </b-col>
-        </b-row> -->
         <b-row>
             <b-col cols="10" offset="1" sm="8" offset-sm="2" md="4" offset-md="4" lg="2" offset-lg="5" xl="4"     offset-xl="4" class="text-center">
                 <b-card  text-variant="white" header="Sign In" header-bg-variant="info" class="text-center card-section">
@@ -40,21 +35,21 @@ import axios from 'axios'
         methods :{
             async submit(){
                 try {
-                   await axios.post(`http://localhost:3000/login`,{
+                   let data = await axios.post(`http://localhost:3000/login`,{
                     email:this.email,
                     password:this.password
-                }).then((data)=>{
-                    if(data.status === 201) {
-                        this.errMsg = data.data.status
-                    }
-                    if(data.status === 200){
-                      localStorage.setItem('user', JSON.stringify(data.data))  
-                    }
-                });
-                this.$router.replace({path: '/dashboard'})
+                })
+
+                if(data.status === 200){
+                 this.$store.commit('setAuth', true);
+                 this.$router.push('/dashboard')  
                 }
-                catch {
-                    console.log('error')
+                if(data.status === 401){
+                   this.$store.commit('setAuth', false);
+                }
+                }
+                catch(err) {
+                    console.log(err);
                 }
                 
                 // if(localStorage.getItem('email') === this.email && localStorage.getItem('password') === this.password) {

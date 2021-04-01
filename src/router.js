@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from './store/store';
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,13 +41,10 @@ const router = new VueRouter({
     mode: "history"
 });
 
-let users = localStorage.getItem('user');
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.isAuthenticated)) {
-        if(users) {
-            next({
-                name:'dashboard'
-            })
+        if(store.getters.isAuthenticated) {
+            next();
         } else {
             next('/')
         }

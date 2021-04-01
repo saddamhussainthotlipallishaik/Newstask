@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     signout() {
-      localStorage.clear()
+      this.$store.commit('setAuth', false)
       this.$router.push("/");
     }
   }
@@ -97,49 +97,3 @@ export default {
   cursor: pointer;
 }
 </style>
-
-
-
-
-
-
-
-      <b-col cols="1" class="text-right">
-        <b-icon
-          icon="justify"
-          font-scale="2"
-          variant="dark"
-          @click="sidebar = !sidebar"
-        ></b-icon>
-        
-      </b-col>
-      <b-col cols="1">
-        <img src="@/assets/new.jpg" class="img-logo" />
-      </b-col>
-      <b-col cols="6"></b-col>
-      <b-col cols="1">
-        <b-form-input
-          size="sm"
-          class="mr-sm-2"
-          placeholder="Search"
-        ></b-form-input>
-      </b-col>
-      <b-col cols="1">
-        <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-      </b-col>
-      <b-col cols="2">
-        <b-dropdown right variant="dark">
-          // <template #button-content>
-            <span
-              ><b-icon icon="person-fill" variant="light"></b-icon>Account</span
-            >
-          <!-- </template> -->
-          <b-dropdown-item href="#" @click="$router.push('/profile')"
-            >Profile</b-dropdown-item
-          >
-          <b-dropdown-item href="#" @click="$router.push('/favourites')"
-            >Favourites</b-dropdown-item
-          >
-          <b-dropdown-item href="#" @click="signout">Sign Out</b-dropdown-item>
-        </b-dropdown>
-      </b-col>

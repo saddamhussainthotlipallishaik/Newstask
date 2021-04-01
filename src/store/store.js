@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state:{
-        news:[]
+        news:[],
+        isAuthenticated: false
     },
     getters:{
-        allNews:(state)=> state.news
+        allNews:(state)=> state.news,
+        isAuthenticated:(state) => state.isAuthenticated
     },
     actions:{
         async NewsData({ commit }){
@@ -19,6 +21,9 @@ export default new Vuex.Store({
     mutations:{
         setNews(state,news) {
             state.news = news
+        },
+        setAuth(state, payload) {
+            state.isAuthenticated = payload;
         }
     }
 })
