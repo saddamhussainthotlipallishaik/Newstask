@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-   <Header />
+   <!-- <Header /> -->
    <!-- <Sidebar /> -->
    <!-- <Card /> -->
    <!-- <Login />
@@ -10,7 +10,8 @@
    <!-- <About /> -->
    <!-- <NewsDashboard /> -->
    <!-- <Profile /> -->
-   <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view>
+   <dragndrop />
+   <!-- <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view> -->
   </div>
 </template>
 
@@ -21,22 +22,24 @@
 // import Login from '@/components/Login'
 // import About from '@/components/About'
 // import Canvas from '@/components/Canvas'
-import Header from '@/components/Header'
+// import Header from '@/components/Header'
 
 // import Card from '@/components/Card'
-// import PreviewImg from '@/components/PreviewImg'
+// import PreviewImg from '@/components/PreviewImg',
+import dragndrop from './components/DragndDrop'
 export default {
   name: 'App',
   components: {
     // About,
     // Canvas,
-    Header,
+    // Header,
     // Card,
     // Login,
     // Register
     // PreviewImg,
     // NewsDashboard,
-    // Profile
+    // Profile,
+    dragndrop
   },
   data(){
     return {
