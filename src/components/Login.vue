@@ -64,7 +64,7 @@ import axios from 'axios'
 
 <style scoped>
 .logo{
-    width: 10vw;
+    width: 8vw;
     height: 20vh;
 }
 
@@ -91,7 +91,7 @@ input:focus {
 }
 @media (max-width: 1399.98px) { 
     .logo {
-        width: 50%;
+        width: 35%;
         height: auto;
     }
  }

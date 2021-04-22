@@ -1,7 +1,7 @@
 <template>
     <div class="bg-light">
         <div>
-            <!-- <Header/> -->
+            <Header/>
             <Card @addfav="arrow" />
         </div>
     </div>
@@ -9,12 +9,12 @@
 
 <script>
 
-// import Header from '@/components/Header'
+import Header from '@/components/Header'
 import Card from '@/components/Card'
     export default {
         name:"NewsDashboard",
         components :{
-            // Header,
+            Header,
             Card,
             
         },

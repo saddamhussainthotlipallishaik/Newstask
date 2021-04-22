@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 const routes = [
     {
         path:'/',
+        component: () => import('@/components/LandingWrapper'),
+        meta: {isAuthenticated: false, showNav: true}
+    },
+    {
+        path:'/login',
         component: () => import('@/components/Login'),
         meta: {isAuthenticated: false, showNav: true}
     },

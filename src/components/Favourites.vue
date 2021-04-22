@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <b-row align-h="center" no-gutters>
       <b-col lg="6" md="6" sm="11">
         <b-card v-for="(info, index) in fav" :key="index" class="card-section">
@@ -43,10 +44,13 @@
 </template>
 
 <script>
-
+import Header from './Header'
 export default {
   name: "Favourites",
   props:['fav'],
+  components:{
+    Header
+  }
 
 };
 </script>

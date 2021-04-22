@@ -20,7 +20,7 @@
             DragStart(e) {
                 e.dataTransfer.setData("text",e.target.id)
                 setTimeout(()=>{
-                    e.target.style.display = 'none'
+                    e.target.style.display = 'none';
                 },0)
             },
             Dropped(e) {

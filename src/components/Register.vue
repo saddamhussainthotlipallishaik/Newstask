@@ -123,7 +123,9 @@ export default {
           password: this.password
         }
       };
-      axios(config).then(res => {
+     
+     if(!(this.nameErr&&this.emailErr&&this.mobileErr&&this.passwordErr&&this.cpasswordErr)) {
+        axios(config).then(res => {
         this.isSuccess = true
         if(res.status === 201) {
             this.error = true;
@@ -138,7 +140,8 @@ export default {
             this.$router.push("/");
           }, 2000);
         }
-      });
+      })
+     }
     },
     check(type) {
       let result;
@@ -179,12 +182,12 @@ export default {
       }
     }
   }
-};
+};  
 </script>
 
 <style scoped>
 .logo {
-  width: 10vw;
+  width: 8vw;
   height: 20vh;
 }
 
@@ -211,7 +214,7 @@ input:focus {
 }
 @media (max-width: 1399.98px) {
   .logo {
-    width: 50%;
+    width: 35%;
     height: auto;
   }
 }

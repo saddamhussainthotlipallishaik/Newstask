@@ -10,8 +10,14 @@
    <!-- <About /> -->
    <!-- <NewsDashboard /> -->
    <!-- <Profile /> -->
-   <dragndrop />
-   <!-- <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view> -->
+   <!-- <Dragndrop /> -->
+   <!-- <Dragndrop2 /> -->
+   <!-- <Draganddrop3 /> -->
+   <!-- <PracticePDF /> -->
+   <!-- <CanvasBasic /> -->
+   <!-- <LandingNavbar />
+   <Landingmiddle /> -->
+   <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view>
   </div>
 </template>
 
@@ -23,10 +29,15 @@
 // import About from '@/components/About'
 // import Canvas from '@/components/Canvas'
 // import Header from '@/components/Header'
-
+// import CanvasBasic from './components/CanvasBasic'
 // import Card from '@/components/Card'
 // import PreviewImg from '@/components/PreviewImg',
-import dragndrop from './components/DragndDrop'
+// import Dragndrop from './components/DragndDrop'
+// import Dragndrop2 from './components/DragandDrop2'
+// import Draganddrop3 from './components/DragandDrop3'
+// import PracticePDF from './components/PracticePdf2'
+// import LandingNavbar from '@/components/LandingNavbar'
+// import Landingmiddle from '@/components/Landingmiddle'
 export default {
   name: 'App',
   components: {
@@ -39,7 +50,13 @@ export default {
     // PreviewImg,
     // NewsDashboard,
     // Profile,
-    dragndrop
+    // Dragndrop,
+    // Dragndrop2,
+    // Draganddrop3,
+    // PracticePDF,
+    // CanvasBasic,
+    // LandingNavbar,
+    // Landingmiddle
   },
   data(){
     return {
