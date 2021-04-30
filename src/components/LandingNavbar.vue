@@ -39,7 +39,6 @@ export default {
     background-color: blue;
     background-image: linear-gradient(to bottom right, rgb(255, 136, 0), rgb(255, 0, 128));
     border-radius: 20px 2px;
-    box-shadow: 2px 2px rgb(255, 136, 0);
 }
 .main-section {
     background-image: url(../assets/newsback.jpg);

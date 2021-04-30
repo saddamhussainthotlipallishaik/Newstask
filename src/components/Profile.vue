@@ -51,7 +51,6 @@
                 previewprofile:'',
                 dprofile:true,
                 preimg:false,
-
                 name:'',
                 gender:'',
                 email:'',
