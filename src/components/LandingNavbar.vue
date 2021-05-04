@@ -1,6 +1,6 @@
 <template>
-  <div class="main-section w-100">
-    <div class="w-100 position-fixed">
+  <div>
+    <div>
       <b-navbar type="dark" class="w-75 m-auto">
         <b-navbar-brand>
           <img src="@/assets/news.png" alt="" width="50" height="50" />
@@ -37,13 +37,10 @@ export default {
 }
 .items:hover {
     background-color: blue;
-    background-image: linear-gradient(to bottom right, rgb(255, 136, 0), rgb(255, 0, 128));
+    background-image: linear-gradient(to bottom right, rgb(0, 238, 255), rgb(255, 145, 0));
     border-radius: 20px 2px;
 }
-.main-section {
-    background-image: url(../assets/newsback.jpg);
-    height: 100vh;
-}
+
 .quote-section {
     color: white;
     position: absolute;

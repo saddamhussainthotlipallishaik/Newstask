@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="quote-section position-absolute">
+    <div>
       <h2>
         If you are going to turn on the internet, it's going to be the Orbit
         News channel.
@@ -21,5 +21,18 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.items {
+  background: none;
+  border: 1px solid black;
+  border-radius: 50px;
+  font-weight: 600;
+}
+.items:hover {
+  background: #000;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+}
 </style>

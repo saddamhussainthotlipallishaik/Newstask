@@ -9,11 +9,14 @@
     <!-- <Profile /> -->
     <!-- <LandingNavbar />
    <Landingmiddle /> -->
-    <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view>
+    <!-- <router-view :fav="favourite" @fav="addFav" @remfav="unlike"></router-view> -->
+    <ScrollCard />
+    
   </div>
 </template>
 
 <script>
+import ScrollCard from '@/components/ScrollCard'
 // import Profile from '@/components/Profile'
 // import NewsDashboard from '@/components/NewsDashboard'
 // import Register from '@/components/Register'
@@ -32,7 +35,8 @@ export default {
     // NewsDashboard,
     // Profile,
     // LandingNavbar,
-    // Landingmiddle
+    // Landingmiddle,
+    ScrollCard
   },
   data() {
     return {
